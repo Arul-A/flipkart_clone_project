@@ -32,7 +32,7 @@ const Navbar = ({isOpen,setIsOpen}) => {
         if(user){
             setTimeout(()=>setIsOpen(false),500)
         }
-    },[user])
+    },[user, setIsOpen])
     const logout = async()=>{
         try{
             await supabase.auth.signOut();
