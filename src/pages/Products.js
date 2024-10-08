@@ -20,8 +20,7 @@ const Products = () => {
   useEffect(() => {
     const filteredData = filterData(filterPrice,ProductsData);
     setData(filteredData);
-    setPage(1)
-      
+    setPage(1) 
   }, [filterPrice]);
 
   const handleSliderChange = (e)=>{
@@ -65,7 +64,7 @@ const Products = () => {
               <input 
                 type="range" 
                 min="0" 
-                step="5000"
+                step="5000v d"
                 max="40000" 
                 value={filterPrice}
                 onChange={handleSliderChange}

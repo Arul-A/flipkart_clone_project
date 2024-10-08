@@ -26,6 +26,7 @@ const Navbar = ({isOpen,setIsOpen}) => {
     const [dotsOpt, setDotsOpt] = useState(false);//handles three dots options
     const [logType, setLogType] = useState(true);
     const user = useSelector((state)=>state.userData.user);
+    const cartItems = useSelector((state)=>state.cartData.cart)
     const dispatch = useDispatch()
     useEffect(()=>{
         if(user){
@@ -116,9 +117,11 @@ const Navbar = ({isOpen,setIsOpen}) => {
             }
             </div>
             
-            <div className='flex grow-[1] gap-3 items-center'>
+            <div className='flex grow-[1] gap-3 items-center relative'>
                 <Link to="/cart"><IoCartOutline title='Cart' className='text-3xl'/></Link>
                 <Link to="/cart"><p title='Cart'>Cart</p></Link>
+                {cartItems.length > 0 && 
+                <p className='absolute left-4 -top-[2px] text-[#fff] px-[4px] text-xs rounded-full bg-red-500'>{cartItems.length}</p>}
             </div>
             <div className='flex grow-[1] gap-3 items-center'>
                 <AiTwotoneShop title='Become a Seller' className='text-3xl'/>
