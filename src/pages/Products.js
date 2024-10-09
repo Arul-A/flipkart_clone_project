@@ -64,7 +64,7 @@ const Products = () => {
               <input 
                 type="range" 
                 min="0" 
-                step="5000v d"
+                step="5000"
                 max="40000" 
                 value={filterPrice}
                 onChange={handleSliderChange}
